@@ -22,13 +22,15 @@ jobs:
           python-version: "3.x"
 
       - name: Update prices
-        run: python update_prices.py
+        run: |
+          python update_prices.py
+          python update_wood.py
 
       - name: Commit updated prices
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CZ1005100543.json
+          git add CZ1005100543.json CZ0008477551.json
           if git diff --cached --quiet; then
             echo "No price changes"
           else
