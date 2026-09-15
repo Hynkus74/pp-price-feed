@@ -67,6 +67,16 @@ def extract_prices(html):
 
 def main():
     html = download_history()
+    print("HTML length:", len(html))
+    print("Contains 1.2818:", "1.2818" in html)
+
+    pos = html.find("1.2818")
+    if pos >= 0:
+        print("HTML around 1.2818:")
+        print(html[max(0, pos - 500):pos + 500])
+    else:
+        print("First 2000 characters of response:")
+        print(html[:2000])
     prices = extract_prices(html)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as file:
