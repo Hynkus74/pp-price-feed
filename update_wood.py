@@ -4,7 +4,7 @@ import urllib.parse
 import urllib.request
 from datetime import date
 
-SOURCE_URL = "https://www.kkip.cz/cs/fondy/historicke-ceny"
+SOURCE_URL = "https://www.kkip.cz/cs/fondy/historicke-ceny?add=354"
 FUND_ID = "354"
 OUTPUT_FILE = "CZ0008477551.json"
 
