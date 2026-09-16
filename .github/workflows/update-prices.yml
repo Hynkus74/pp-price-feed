@@ -24,17 +24,17 @@ jobs:
       - name: Update prices
         run: |
           python update_prices.py
-          python update_btc.py
           python update_wood.py
-          
+
       - name: Commit updated prices
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CZ1005100543.json CZ0008477551.json BTC-CZK.json
+          git add CZ1005100543.json CZ0008477551.json
           if git diff --cached --quiet; then
             echo "No price changes"
           else
-            git commit -m "Update fund and BTC prices"
+            git commit -m "Update J&T WOOD Defense prices"
             git push
+          fi
           fi
