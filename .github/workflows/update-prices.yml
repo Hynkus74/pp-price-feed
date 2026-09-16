@@ -24,9 +24,9 @@ jobs:
       - name: Update prices
         run: |
           python update_prices.py
-          python update_wood.py
           python update_btc.py
-
+          python update_wood.py
+          
       - name: Commit updated prices
         run: |
           git config user.name "github-actions[bot]"
